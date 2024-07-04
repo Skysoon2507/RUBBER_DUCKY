@@ -23,5 +23,5 @@ while True:
     new_y = min(max(currentMouseY + y_offset, 0), screenHeight - 1)
     
     # Déplacer la souris
-    pyautogui.moveTo(new_x, new_y, duration=0.10)
-    time.sleep(0.10)  # Délai de 1 seconde
+    pyautogui.moveTo(new_x, new_y, duration=0.01)
+    #time.sleep(0.10)  # Délai de 1 seconde
