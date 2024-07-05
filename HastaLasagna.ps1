@@ -121,4 +121,4 @@ Remove-MpPreference -ExclusionPath $dir
 Clear-History
 
 # Reboot the system
-Restart-Computer -Force
+#Restart-Computer -Force
